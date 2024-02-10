@@ -60,8 +60,9 @@ def scrape_it_news():
     for index, news in enumerate(news_list):
         a_idx = 0
         img = news.find("img")
+        # img 태그가 있으면 1번째 a 태그의 정보를 사용
         if img:
-            a_idx = 1 # img 태그가 있으면 1번째 a 태그의 정보를 사용
+            a_idx = 1
 
         a_tag = news.find_all("a")[a_idx]
         title = a_tag.get_text().strip()
